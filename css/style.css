@@ -481,6 +481,38 @@ main {
     margin-bottom: 25px;
 }
 
+/* =========================================================
+   CONTACT PAGE - INSTAGRAM
+   ========================================================= */
+
+.instagram-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #004225;
+    text-decoration: none;
+
+    font-size: 20px;
+
+    transition: color 0.3s ease;
+}
+
+.instagram-contact:hover {
+    color: #c9a227;
+}
+
+.instagram-contact-icon {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* Space between Instagram handle and button */
+
+.instagram-button {
+    margin-bottom: 0px;
+}
 
 /* =========================================================
    FOOTER
@@ -622,6 +654,7 @@ footer .copyright {
     .about-page,
     .about-work {
         padding: 60px 25px;
+        padding-bottom: 5px;
     }
 
     .about-philosophy,
@@ -657,5 +690,6 @@ footer .copyright {
     .about-preview {
         padding: 70px 25px;
     }
+    
     
 }
