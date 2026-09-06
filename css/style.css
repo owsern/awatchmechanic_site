@@ -100,11 +100,13 @@ main {
 .hero-image img {
     width: 100%;
     display: block;
+    border: 10px solid #241a01;
     border-radius: 2px;
 }
 
 .hero-text {
     flex: 1;
+    text-align: center;
 }
 
 .hero-text h2 {
@@ -117,12 +119,6 @@ main {
     line-height: 1.2;
 
     color: #004225;
-}
-
-.hero-text p {
-    font-size: 18px;
-    max-width: 500px;
-    margin-bottom: 20px;
 }
 
 
@@ -196,12 +192,15 @@ main {
 .service {
     flex: 1;
 
-    border: 1px solid #d6d0c0;
-    background-color: #f9f7f1;
+    background-color: white;
+
+    border: 3px solid #241a01;
 
     overflow: hidden;
 
     text-align: left;
+
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service img {
@@ -250,9 +249,11 @@ main {
     flex: 1;
     background-color: white;
 
+    border: 3px solid #241a01;
+
     padding-bottom: 25px;
 
-    border: 1px solid #ddd7c8;
+    text-align: center;
 }
 
 .watch-item img {
@@ -423,9 +424,9 @@ main {
    ========================================================= */
 
 .about-contact {
-    background-color: #004225;
+    background-color: white;
 
-    color: white;
+    color: #222;
 
     padding: 90px 40px;
 
@@ -433,7 +434,7 @@ main {
 }
 
 .about-contact h2 {
-    color: white;
+    color: #004225;
 }
 
 .about-contact p {
@@ -445,9 +446,9 @@ main {
 }
 
 .about-contact .button {
-    background-color: transparent;
-
-    border-color: white;
+    background-color: #004225;
+    border-color: #004225;
+    color: white;
 }
 
 .about-contact .button:hover {
@@ -512,33 +513,35 @@ footer h2 a:hover {
     color: #c9a227;
 }
 
-footer h3 {
-    margin: 0 0 8px;
-
-    font-family: Garamond, "Times New Roman", serif;
-    font-size: 24px;
-}
-
 footer p {
     margin: 4px 0;
     color: white;
 }
 
-.footer-nav {
-    margin: 12px 0;
-}
 
-.footer-nav a {
+/* Instagram */
+
+.instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 12px;
+
     color: white;
     text-decoration: none;
 
-    margin: 0 10px;
+    font-size: 15px;
 
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 16px;
+    transition: color 0.3s ease;
 }
 
-.footer-nav a:hover {
+.instagram-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.instagram-link:hover {
     color: #c9a227;
 }
 
@@ -654,4 +657,5 @@ footer .copyright {
     .about-preview {
         padding: 70px 25px;
     }
+    
 }
