@@ -24,6 +24,10 @@ body {
     line-height: 1.6;
 }
 
+p {
+    font-family: "Times New Roman", Times, serif;
+}
+
 
 /* =========================================================
    HEADER
@@ -100,6 +104,7 @@ main {
 .hero-image img {
     width: 100%;
     display: block;
+
     border: 10px solid #241a01;
     border-radius: 2px;
 }
@@ -200,7 +205,14 @@ main {
 
     text-align: left;
 
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.service:hover {
+    border-color: #c9a227;
+    box-shadow: 0 4px 12px rgba(0, 66, 37, 0.08);
 }
 
 .service img {
@@ -245,8 +257,331 @@ main {
     gap: 30px;
 }
 
+
+/* =========================================================
+   GALLERY HOVER CARDS
+   ========================================================= */
+
+.gallery-card {
+    position: relative;
+
+    flex: 1;
+
+    display: block;
+
+    overflow: hidden;
+
+    border: 3px solid #241a01;
+
+    background-color: #004225;
+
+    text-decoration: none;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+    border-color: #c9a227;
+    box-shadow: 0 4px 12px rgba(0, 66, 37, 0.12);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* =========================================================
+   GALLERY HOVER OVERLAY
+   ========================================================= */
+
+.gallery-overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background-color: rgba(0, 45, 26, 0.88);
+
+    opacity: 0;
+
+    transition: opacity 0.35s ease;
+}
+
+
+/* Show overlay on hover */
+
+.gallery-card:hover .gallery-overlay {
+    opacity: 1;
+}
+
+
+/* Slight image zoom */
+
+.gallery-card:hover img {
+    transform: scale(1.05);
+}
+
+
+/* Gallery title */
+
+.gallery-overlay h3 {
+    margin: 0 0 15px;
+
+    font-family: Garamond, "Times New Roman", serif;
+
+    font-size: 30px;
+
+    color: white;
+}
+
+
+/* Gallery description */
+
+.gallery-overlay p {
+    max-width: 350px;
+
+    margin: 0 0 20px;
+
+    font-size: 16px;
+
+    color: white;
+}
+
+
+/* Gallery view text */
+
+.gallery-overlay span {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    color: #c9a227;
+}
+
+
+/* =========================================================
+   GALLERY LIGHTBOX
+   ========================================================= */
+
+.lightbox {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    background-color: rgba(0, 0, 0, 0.92);
+
+    z-index: 1000;
+
+    cursor: pointer;
+
+    overflow-y: auto;
+}
+
+
+/* Show lightbox */
+
+.lightbox.active {
+    display: flex;
+}
+
+
+/* =========================================================
+   LIGHTBOX CONTENT
+   ========================================================= */
+
+.lightbox-content {
+    width: 100%;
+    max-width: 1000px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    cursor: default;
+}
+
+
+/* =========================================================
+   LIGHTBOX MAIN IMAGE
+   ========================================================= */
+
+.lightbox img {
+    display: block;
+
+    max-width: 90vw;
+    max-height: 70vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border: 3px solid #241a01;
+}
+
+
+/* =========================================================
+   LIGHTBOX STORY IMAGES
+   ========================================================= */
+
+/*
+   Additional restoration images that appear
+   between paragraphs in the lightbox story.
+*/
+
+.lightbox-story-image {
+    display: block;
+
+    width: auto;
+
+    max-width: 70%;
+
+    height: auto;
+
+    margin: 30px auto;
+
+    border: 2px solid #241a01;
+}
+
+
+/* =========================================================
+   LIGHTBOX TEXT
+   ========================================================= */
+
+.lightbox-text {
+    width: 100%;
+    max-width: 800px;
+
+    margin-top: 30px;
+
+    padding: 0 20px 30px;
+
+    text-align: center;
+
+    color: white;
+}
+
+
+/* Lightbox title */
+
+.lightbox-text h2 {
+    margin: 0 0 20px;
+
+    font-family: Garamond, "Times New Roman", serif;
+
+    font-size: 34px;
+
+    color: #c9a227;
+}
+
+
+/* Lightbox paragraphs */
+
+.lightbox-text p {
+    max-width: 750px;
+
+    margin: 0 auto 18px;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: white;
+}
+
+
+/* =========================================================
+   LIGHTBOX CLOSE BUTTON
+   ========================================================= */
+
+.lightbox-close {
+    position: fixed;
+
+    top: 15px;
+    right: 25px;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 48px;
+    font-weight: normal;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 1001;
+
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: #c9a227;
+}
+
+
+/* =========================================================
+   PREVENT PAGE SCROLLING WHILE LIGHTBOX IS OPEN
+   ========================================================= */
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HOMEPAGE WATCH ITEMS
+   ========================================================= */
+
 .watch-item {
     flex: 1;
+
     background-color: white;
 
     border: 3px solid #241a01;
@@ -276,6 +611,7 @@ main {
 
 .watch-item p {
     margin: 0 15px;
+
     color: #555;
 }
 
@@ -299,6 +635,7 @@ main {
 
 .about-preview p {
     max-width: 750px;
+
     margin: 0 auto 20px;
 
     font-size: 18px;
@@ -306,12 +643,15 @@ main {
 
 .about-preview .button {
     background-color: transparent;
+
     border-color: white;
 }
 
 .about-preview .button:hover {
     background-color: #c9a227;
+
     border-color: #c9a227;
+
     color: #111;
 }
 
@@ -322,6 +662,7 @@ main {
 
 .about-page {
     max-width: 900px;
+
     margin: 0 auto;
 
     padding: 90px 40px;
@@ -334,10 +675,13 @@ main {
 .about-work h2,
 .about-contact h2 {
     margin-top: 0;
+
     margin-bottom: 30px;
 
     font-family: Garamond, "Times New Roman", serif;
+
     font-size: 38px;
+
     font-weight: bold;
 
     color: #004225;
@@ -345,6 +689,7 @@ main {
 
 .about-page p {
     max-width: 750px;
+
     margin: 0 auto 25px;
 
     font-size: 18px;
@@ -365,6 +710,7 @@ main {
 
 .about-philosophy p {
     max-width: 750px;
+
     margin: 0 auto 25px;
 
     font-size: 18px;
@@ -378,9 +724,11 @@ main {
 .about-philosophy ul,
 .about-work ul {
     width: 600px;
+
     max-width: 100%;
 
     margin: 30px auto;
+
     padding: 0;
 
     list-style: none;
@@ -411,6 +759,7 @@ main {
 
 .about-work {
     max-width: 900px;
+
     margin: 0 auto;
 
     padding: 90px 40px;
@@ -447,7 +796,9 @@ main {
 
 .about-contact .button {
     background-color: #004225;
+
     border-color: #004225;
+
     color: white;
 }
 
@@ -466,8 +817,10 @@ main {
 
 .contact-preview {
     padding: 90px 40px;
+
     text-align: center;
-    background-color: rgb(253, 252, 251)
+
+    background-color: rgb(253, 252, 251);
 }
 
 .contact-preview h2 {
@@ -476,8 +829,10 @@ main {
 
 .contact-preview p {
     font-size: 18px;
+
     margin-bottom: 25px;
 }
+
 
 /* =========================================================
    CONTACT PAGE - INSTAGRAM
@@ -485,10 +840,13 @@ main {
 
 .instagram-contact {
     display: inline-flex;
+
     align-items: center;
+
     gap: 10px;
 
     color: #004225;
+
     text-decoration: none;
 
     font-size: 20px;
@@ -512,12 +870,14 @@ main {
     margin-bottom: 0px;
 }
 
+
 /* =========================================================
    FOOTER
    ========================================================= */
 
 footer {
     background-color: #004225;
+
     color: white;
 
     padding: 25px 20px 18px;
@@ -529,11 +889,13 @@ footer h2 {
     margin: 0 0 8px;
 
     font-family: Garamond, "Times New Roman", serif;
+
     font-size: 24px;
 }
 
 footer h2 a {
     color: white;
+
     text-decoration: none;
 
     transition: color 0.3s ease;
@@ -545,20 +907,26 @@ footer h2 a:hover {
 
 footer p {
     margin: 4px 0;
+
     color: white;
 }
 
 
-/* Instagram */
+/* =========================================================
+   FOOTER - INSTAGRAM
+   ========================================================= */
 
 .instagram-link {
     display: inline-flex;
+
     align-items: center;
+
     gap: 8px;
 
     margin-top: 12px;
 
     color: white;
+
     text-decoration: none;
 
     font-size: 15px;
@@ -579,6 +947,7 @@ footer .copyright {
     margin-top: 12px;
 
     font-size: 13px;
+
     color: #e5e5e5;
 }
 
@@ -589,6 +958,11 @@ footer .copyright {
 
 @media (max-width: 800px) {
 
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
     header {
         padding: 35px 20px;
     }
@@ -598,7 +972,9 @@ footer .copyright {
     }
 
 
-    /* Navigation */
+    /* =====================================================
+       NAVIGATION
+       ===================================================== */
 
     .navbar {
         padding: 20px 10px;
@@ -606,11 +982,14 @@ footer .copyright {
 
     .navbar a {
         margin: 0 8px;
+
         font-size: 17px;
     }
 
 
-    /* Homepage Hero */
+    /* =====================================================
+       HOMEPAGE HERO
+       ===================================================== */
 
     .hero {
         flex-direction: column;
@@ -625,7 +1004,9 @@ footer .copyright {
     }
 
 
-    /* Services */
+    /* =====================================================
+       SERVICES
+       ===================================================== */
 
     .service-container {
         flex-direction: column;
@@ -636,22 +1017,153 @@ footer .copyright {
     }
 
 
-    /* Recent Work */
+    /* =====================================================
+       GALLERY
+       ===================================================== */
 
     .watch-gallery {
         flex-direction: column;
     }
+
+    .gallery-card {
+        width: 100%;
+    }
+
+    .gallery-card img {
+        height: 300px;
+    }
+
+
+    /* On touch devices there is no true hover.
+       Keep the cards clean and let the image itself
+       open the lightbox. */
+
+    .gallery-overlay {
+        display: none;
+    }
+
+
+    /* =====================================================
+       HOMEPAGE RECENT WORK
+       ===================================================== */
 
     .watch-item img {
         height: auto;
     }
 
 
-    /* About Page */
+    /* =====================================================
+       LIGHTBOX
+       ===================================================== */
+
+    .lightbox {
+        padding: 20px;
+
+        align-items: flex-start;
+
+        justify-content: center;
+    }
+
+    .lightbox-content {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-top: 45px;
+
+        align-items: center;
+    }
+
+    .lightbox img {
+        max-width: 95vw;
+
+        max-height: 60vh;
+
+        border-width: 2px;
+    }
+
+
+    /* =====================================================
+       MOBILE LIGHTBOX STORY IMAGES
+       ===================================================== */
+
+    .lightbox-story-image {
+        display: block;
+
+        width: 75%;
+
+        max-width: 75%;
+
+        height: auto;
+
+        margin-top: 25px;
+
+        margin-right: auto;
+
+        margin-bottom: 25px;
+
+        margin-left: auto;
+
+        align-self: center;
+
+        border-width: 2px;
+    }
+
+
+    /* =====================================================
+       MOBILE LIGHTBOX TEXT
+       ===================================================== */
+
+    .lightbox-text {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-top: 20px;
+
+        padding: 0 10px 30px;
+
+        text-align: center;
+    }
+
+    .lightbox-text h2 {
+        font-size: 28px;
+    }
+
+    .lightbox-text p {
+        width: 100%;
+
+        max-width: 750px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+        font-size: 16px;
+    }
+
+
+    /* =====================================================
+       MOBILE LIGHTBOX CLOSE BUTTON
+       ===================================================== */
+
+    .lightbox-close {
+        top: 15px;
+
+        right: 18px;
+
+        font-size: 42px;
+    }
+
+
+    /* =====================================================
+       ABOUT PAGE
+       ===================================================== */
 
     .about-page,
     .about-work {
         padding: 60px 25px;
+
         padding-bottom: 5px;
     }
 
@@ -668,16 +1180,21 @@ footer .copyright {
     }
 
 
-    /* About Lists */
+    /* =====================================================
+       ABOUT LISTS
+       ===================================================== */
 
     .about-philosophy ul,
     .about-work ul {
         width: 100%;
+
         max-width: 600px;
     }
 
 
-    /* Other Sections */
+    /* =====================================================
+       OTHER SECTIONS
+       ===================================================== */
 
     .services,
     .recent-work,
@@ -688,6 +1205,20 @@ footer .copyright {
     .about-preview {
         padding: 70px 25px;
     }
-    
-    
+
+
+    /* =====================================================
+       INSTAGRAM ICON
+       ===================================================== */
+
+    .instagram-contact-icon {
+        width: 24px;
+        height: 24px;
+
+        max-width: 24px;
+        max-height: 24px;
+
+        flex: 0 0 24px;
+    }
+
 }
