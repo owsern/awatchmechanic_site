@@ -466,10 +466,8 @@ main {
 
 .contact-preview {
     padding: 90px 40px;
-
     text-align: center;
-
-    background-color: #f4f1e8;
+    background-color: rgb(253, 252, 251)
 }
 
 .contact-preview h2 {
@@ -505,9 +503,6 @@ main {
 .instagram-contact-icon {
     width: 24px;
     height: 24px;
-    max-width: 24px;
-    max-height: 24px;
-    flex: 0 0 24px;
 }
 
 
