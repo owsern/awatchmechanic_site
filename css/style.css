@@ -428,7 +428,7 @@ main {
 
 .lightbox-content {
     width: 100%;
-    max-width: 1000px;
+    max-width: 800px;
 
     display: flex;
     flex-direction: column;
@@ -442,42 +442,22 @@ main {
    LIGHTBOX MAIN IMAGE
    ========================================================= */
 
-.lightbox img {
+#lightbox-image {
     display: block;
 
-    max-width: 90vw;
-    max-height: 70vh;
-
     width: auto;
+
+    max-width: 100%;
+
     height: auto;
+
+    max-height: 70vh;
 
     object-fit: contain;
 
+    margin: 0 auto;
+
     border: 3px solid #241a01;
-}
-
-
-/* =========================================================
-   LIGHTBOX STORY IMAGES
-   ========================================================= */
-
-/*
-   Additional restoration images that appear
-   between paragraphs in the lightbox story.
-*/
-
-.lightbox-story-image {
-    display: block;
-
-    width: auto;
-
-    max-width: 70%;
-
-    height: auto;
-
-    margin: 30px auto;
-
-    border: 2px solid #241a01;
 }
 
 
@@ -499,7 +479,44 @@ main {
 }
 
 
-/* Lightbox title */
+/* =========================================================
+   LIGHTBOX DESCRIPTION CONTAINER
+   ========================================================= */
+
+#lightbox-description {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   LIGHTBOX STORY IMAGE
+   ========================================================= */
+
+.lightbox-story-image {
+    display: block;
+
+    width: 80%;
+
+    max-width: 100%;
+
+    height: auto;
+
+    margin: 30px auto;
+
+    align-self: center;
+
+    border: 2px solid #241a01;
+}
+
+
+/* =========================================================
+   LIGHTBOX TITLE
+   ========================================================= */
 
 .lightbox-text h2 {
     margin: 0 0 20px;
@@ -512,9 +529,13 @@ main {
 }
 
 
-/* Lightbox paragraphs */
+/* =========================================================
+   LIGHTBOX PARAGRAPHS
+   ========================================================= */
 
 .lightbox-text p {
+    width: 100%;
+
     max-width: 750px;
 
     margin: 0 auto 18px;
@@ -1074,37 +1095,20 @@ footer .copyright {
         align-items: center;
     }
 
-    .lightbox img {
-        max-width: 95vw;
+
+    /* =====================================================
+       MOBILE MAIN LIGHTBOX IMAGE
+       ===================================================== */
+
+    #lightbox-image {
+        width: auto;
+
+        max-width: 100%;
 
         max-height: 60vh;
 
-        border-width: 2px;
-    }
-
-
-    /* =====================================================
-       MOBILE LIGHTBOX STORY IMAGES
-       ===================================================== */
-
-    .lightbox-story-image {
-        display: block;
-
-        width: 75%;
-
-        max-width: 75%;
-
-        height: auto;
-
-        margin-top: 25px;
-
-        margin-right: auto;
-
-        margin-bottom: 25px;
-
         margin-left: auto;
-
-        align-self: center;
+        margin-right: auto;
 
         border-width: 2px;
     }
@@ -1126,9 +1130,46 @@ footer .copyright {
         text-align: center;
     }
 
-    .lightbox-text h2 {
-        font-size: 28px;
+
+    /* =====================================================
+       MOBILE LIGHTBOX DESCRIPTION
+       ===================================================== */
+
+    #lightbox-description {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
     }
+
+
+    /* =====================================================
+       MOBILE STORY IMAGE
+       ===================================================== */
+
+    .lightbox-story-image {
+        display: block;
+
+        width: 80%;
+
+        max-width: 100%;
+
+        height: auto;
+
+        margin: 25px auto;
+
+        align-self: center;
+
+        border-width: 2px;
+    }
+
+
+    /* =====================================================
+       MOBILE STORY PARAGRAPHS
+       ===================================================== */
 
     .lightbox-text p {
         width: 100%;
