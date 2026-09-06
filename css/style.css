@@ -486,24 +486,67 @@ main {
    ========================================================= */
 
 footer {
-    background-color: #111;
+    background-color: #004225;
     color: white;
 
-    padding: 40px 20px;
+    padding: 25px 20px 18px;
 
     text-align: center;
 }
 
-footer h3 {
-    margin: 0 0 10px;
+footer h2 {
+    margin: 0 0 8px;
 
     font-family: Garamond, "Times New Roman", serif;
-    font-size: 25px;
+    font-size: 24px;
+}
+
+footer h2 a {
+    color: white;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+footer h2 a:hover {
+    color: #c9a227;
+}
+
+footer h3 {
+    margin: 0 0 8px;
+
+    font-family: Garamond, "Times New Roman", serif;
+    font-size: 24px;
 }
 
 footer p {
-    margin: 5px 0;
-    color: #ccc;
+    margin: 4px 0;
+    color: white;
+}
+
+.footer-nav {
+    margin: 12px 0;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+
+    margin: 0 10px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+}
+
+.footer-nav a:hover {
+    color: #c9a227;
+}
+
+footer .copyright {
+    margin-top: 12px;
+
+    font-size: 13px;
+    color: #e5e5e5;
 }
 
 
