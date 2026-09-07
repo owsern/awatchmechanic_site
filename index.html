@@ -12,48 +12,74 @@
 
 <body>
 
-    <!-- Header -->
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
 
     <header>
+
         <h1>A Watch Mechanic</h1>
+
     </header>
 
 
-    <!-- Navigation -->
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
 
     <nav class="navbar">
+
         <a href="index.html">Home</a>
+
         <a href="about.html">About</a>
+
         <a href="gallery.html">Gallery</a>
+
         <a href="contact.html">Contact</a>
+
     </nav>
 
 
-    <!-- Main Content -->
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
 
     <main>
 
 
-        <!-- Hero Section -->
+        <!-- =================================================
+             HERO SECTION
+             ================================================= -->
 
         <section class="hero">
 
+
             <div class="hero-image">
-                <img src="images/frontimage.jpg" alt="front image ">
+
+                <img
+                    src="images/frontimage.jpg"
+                    alt="A mechanical watch"
+                >
+
             </div>
+
 
             <div class="hero-text">
 
                 <h2>Welcome!</h2>
 
                 <p>
-                    Welcome to A Watch Mechanic. This is my website where I showcase my work 
-                    and provide information about my watchmaking services.
+                    Welcome to A Watch Mechanic. This is my website
+                    where I showcase my work and provide information
+                    about my watchmaking services.
                 </p>
 
                 <p>
-                    Feel free to browse the gallery of my work, learn not only about me 
-                    and my services, but also about the stories behind the watches that I restore.
+                    Feel free to browse the gallery of my work,
+                    learn not only about me and my services, but
+                    also about the stories behind the watches that
+                    I restore.
                 </p>
 
                 <a href="gallery.html" class="button">
@@ -62,14 +88,18 @@
 
             </div>
 
+
         </section>
 
 
-        <!-- Services -->
+        <!-- =================================================
+             SERVICES
+             ================================================= -->
 
         <section class="services">
 
             <h2>What I Do</h2>
+
 
             <div class="service-container">
 
@@ -99,7 +129,7 @@
                 <div class="service">
 
                     <img
-                        src="images/restoration.jpg"
+                        src="images/tudor7934/restoration.jpg"
                         alt="Vintage watch being restored"
                     >
 
@@ -113,107 +143,131 @@
 
                 </div>
 
-            </div>
-
-        </section>
-
-
-        <!-- Recent Work -->
-
-        <section class="recent-work">
-
-            <h2>Recent Projects</h2>
-
-            <div class="watch-gallery">
-
-
-                <!-- Omega 562 -->
-
-                <div class="watch-item">
-
-                    <img
-                        src="images/omega562.jpg"
-                        alt="Omega Calibre 562 restoration"
-                    >
-
-                    <h3>Omega Calibre 562</h3>
-
-                    <p>
-                        Automatic movement restoration
-                    </p>
-
-                </div>
-
-
-                <!-- Zenith 2572 -->
-
-                <div class="watch-item">
-
-                    <img
-                        src="images/zenith2572.jpg"
-                        alt="Zenith Calibre 2572 restoration"
-                    >
-
-                    <h3>Zenith Calibre 2572</h3>
-
-                    <p>
-                        Mechanical service
-                    </p>
-
-                </div>
-
-
-                <!-- Tudor 7934 -->
-
-                <div class="watch-item">
-
-                    <img
-                        src="images/tudor.jpg"
-                        alt="Tudor 7934 restoration"
-                    >
-
-                    <h3>Tudor 7934</h3>
-
-                    <p>
-                        Restoration
-                    </p>
-
-                </div>
 
             </div>
 
-            <p></p>
+        </section>
 
-            <a href="gallery.html" class="button">
-                View Gallery
-            </a>
+
+        <!-- =================================================
+             RECENT PROJECTS + CONTACT
+             ================================================= -->
+
+        <section class="projects-contact">
+
+
+            <!-- =================================================
+                 RECENT PROJECTS
+                 ================================================= -->
+
+            <div class="recent-work">
+
+                <h2>Recent Projects</h2>
+
+
+                <div class="project-carousel">
+
+
+                    <!-- =================================================
+                         CAROUSEL SLIDES
+                         ================================================= -->
+
+                    <div class="carousel-track">
+
+
+                        <!-- Omega 562 -->
+
+                        <div class="carousel-slide active">
+
+                            <img
+                                src="images/omega562.jpg"
+                                alt="Omega Calibre 562 restoration"
+                            >
+
+                        </div>
+
+
+                        <!-- Zenith 2572 -->
+
+                        <div class="carousel-slide">
+
+                            <img
+                                src="images/zenith2572.jpg"
+                                alt="Zenith Calibre 2572 restoration"
+                            >
+
+                        </div>
+
+
+                        <!-- Tudor 7934 -->
+
+                        <div class="carousel-slide">
+
+                            <img
+                                src="images/tudor.jpg"
+                                alt="Tudor 7934 restoration"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Gallery Button -->
+
+                <a href="gallery.html" class="button">
+                    View Gallery
+                </a>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 CONTACT PREVIEW
+                 ================================================= -->
+
+            <div class="contact-preview">
+
+                <h2>
+                    Have a Watch That Needs Attention?
+                </h2>
+
+                <p>
+                    Get in touch to discuss your watch and what
+                    it may need.
+                </p>
+
+                <a href="contact.html" class="button">
+                    Contact Me
+                </a>
+
+            </div>
+
 
         </section>
 
-        <!-- Contact -->
-
-        <section class="contact-preview">
-
-            <h2>Have a Watch That Needs Attention?</h2>
-
-            <p>
-                Get in touch to discuss your watch and what it may need.
-            </p>
-
-            <a href="contact.html" class="button">
-                Contact Me
-            </a>
-
-        </section>
 
     </main>
 
 
-    <!-- Footer -->
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
 
     <div id="footer"></div>
 
-    <script src="js/footer.js"></script> 
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="js/footer.js"></script>
+
 
 </body>
 

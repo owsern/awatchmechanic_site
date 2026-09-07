@@ -1,11 +1,29 @@
-/* =========================================================
+ /* =========================================================
    A WATCH MECHANIC
    Main Website Stylesheet
    ========================================================= */
 
 
 /* =========================================================
-   GENERAL PAGE STYLING
+   COLOUR PALETTE
+   ========================================================= */
+
+:root {
+
+    --green: #004225;
+    --dark-green: #002d1a;
+    --gold: #c9a227;
+
+    --cream: #f4f1e8;
+
+    --text: #222;
+    --border: #241a01;
+
+}
+
+
+/* =========================================================
+   GLOBAL RESET
    ========================================================= */
 
 * {
@@ -17,15 +35,90 @@ html {
 }
 
 body {
+
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f1e8;
-    color: #222;
+    padding: 0;
+
+    background-color: var(--cream);
+
+    color: var(--text);
+
+    font-family:
+        Garamond,
+        Georgia,
+        "Times New Roman",
+        serif;
+
     line-height: 1.6;
+
 }
 
+body.lightbox-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+
+    margin-top: 0;
+
+    font-family:
+        Garamond,
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-weight: normal;
+
+}
+
+h1 {
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+   ========================================================= */
+
 p {
-    font-family: "Times New Roman", Times, serif;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
 }
 
 
@@ -34,43 +127,63 @@ p {
    ========================================================= */
 
 header {
-    background-color: #004225;
+
+    background-color: var(--green);
+
     color: white;
-    padding: 45px 20px;
+
     text-align: center;
+
+    padding:
+        35px 20px 30px;
+
 }
 
 header h1 {
+
     margin: 0;
-    font-family: Garamond, "Times New Roman", serif;
-    font-size: 46px;
-    font-weight: bold;
-    letter-spacing: 2px;
+
+    font-size: 2.8rem;
+
 }
 
 
 /* =========================================================
-   NAVIGATION BAR
+   NAVIGATION
    ========================================================= */
 
 .navbar {
-    background-color: #002d1a;
-    text-align: center;
-    padding: 25px 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 45px;
+
+    background-color: var(--dark-green);
+
+    padding:
+        15px 20px;
+
 }
 
 .navbar a {
+
     color: white;
-    text-decoration: none;
-    margin: 0 25px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 21px;
-    font-weight: bold;
-    transition: color 0.3s ease;
+
+    font-size: 1.05rem;
+
+    transition:
+        color 0.3s ease;
+
 }
 
 .navbar a:hover {
-    color: #c9a227;
+
+    color: var(--gold);
+
 }
 
 
@@ -79,51 +192,84 @@ header h1 {
    ========================================================= */
 
 main {
+
     width: 100%;
+
+    margin: 0 auto;
+
 }
 
 
 /* =========================================================
-   HERO SECTION
+   HERO / WELCOME
    ========================================================= */
 
 .hero {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 40px;
 
-    display: flex;
+    width: 100%;
+
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding:
+        60px 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 60px;
+
     align-items: center;
-    gap: 70px;
+
+    border-bottom:
+        3px solid var(--border);
+
 }
 
 .hero-image {
-    flex: 1;
+
+    width: 100%;
+
 }
 
 .hero-image img {
-    width: 100%;
+
     display: block;
 
-    border: 10px solid #241a01;
-    border-radius: 2px;
+    width: 100%;
+
+    height: auto;
+
+    object-fit: cover;
+
+    border:
+        3px solid var(--border);
+
 }
 
 .hero-text {
-    flex: 1;
-    text-align: center;
+
+    max-width: 600px;
+
 }
 
 .hero-text h2 {
-    margin-top: 0;
-    margin-bottom: 15px;
 
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 42px;
-    font-weight: bold;
-    line-height: 1.2;
+    font-size: 3.5rem;
 
-    color: #004225;
+    margin-bottom: 20px;
+
+}
+
+.hero-text p {
+
+    font-size: 1.2rem;
+
+    line-height: 1.7;
+
 }
 
 
@@ -132,150 +278,372 @@ main {
    ========================================================= */
 
 .button {
+
     display: inline-block;
 
-    margin-top: 15px;
-    padding: 13px 28px;
+    margin-top: 20px;
 
-    background-color: #004225;
+    padding:
+        12px 25px;
+
+    background-color: var(--green);
+
     color: white;
 
-    text-decoration: none;
+    border:
+        2px solid var(--green);
 
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 16px;
-    font-weight: bold;
+    font-family:
+        Garamond,
+        Georgia,
+        serif;
 
-    border: 1px solid #004225;
+    font-size: 1rem;
 
     transition:
         background-color 0.3s ease,
         color 0.3s ease,
         border-color 0.3s ease;
+
 }
 
 .button:hover {
-    background-color: #c9a227;
-    border-color: #c9a227;
-    color: #111;
+
+    background-color: var(--gold);
+
+    border-color: var(--gold);
+
+    color: var(--dark-green);
+
 }
 
 
 /* =========================================================
-   SERVICES SECTION
+   SERVICES
    ========================================================= */
 
 .services {
-    background-color: white;
-    padding: 80px 40px;
+
+    width: 100%;
+
+    padding:
+        90px 30px;
+
     text-align: center;
+
 }
 
-.services h2,
-.recent-work h2,
-.about-preview h2,
-.contact-preview h2 {
-    margin-top: 0;
-    margin-bottom: 45px;
+.services h2 {
 
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 36px;
-    font-weight: bold;
+    margin-bottom: 50px;
 
-    color: #004225;
 }
 
 .service-container {
-    max-width: 1100px;
+
+    width: 100%;
+
+    max-width: 1200px;
+
     margin: 0 auto;
 
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 40px;
+
 }
 
 .service {
-    flex: 1;
 
     background-color: white;
 
-    border: 3px solid #241a01;
+    border:
+        3px solid var(--border);
 
-    overflow: hidden;
+    padding-bottom: 30px;
 
-    text-align: left;
-
-    transition:
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.service:hover {
-    border-color: #c9a227;
-    box-shadow: 0 4px 12px rgba(0, 66, 37, 0.08);
 }
 
 .service img {
+
+    display: block;
+
     width: 100%;
+
     height: 300px;
 
     object-fit: cover;
 
-    display: block;
+    border-bottom:
+        2px solid var(--border);
+
 }
 
 .service h3 {
-    margin: 25px 30px 10px;
 
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 25px;
+    margin:
+        25px 25px 10px;
 
-    color: #004225;
 }
 
 .service p {
-    margin: 0 30px 30px;
 
-    font-size: 16px;
+    margin:
+        0 25px;
+
 }
 
 
 /* =========================================================
-   RECENT WORK SECTION
+   RECENT PROJECTS + CONTACT
+   FULL WIDTH
    ========================================================= */
 
-.recent-work {
-    padding: 80px 40px;
-    text-align: center;
+.projects-contact {
+
+    width: 100%;
+
+    margin: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items: stretch;
+
+    background-color: white;
+
+    border-top:
+        3px solid var(--border);
+
 }
 
-.watch-gallery {
-    max-width: 1200px;
-    margin: 0 auto;
+
+/* =========================================================
+   RECENT WORK
+   ========================================================= */
+
+.projects-contact .recent-work {
+
+    width: 100%;
+
+    padding:
+        50px 40px;
 
     display: flex;
-    gap: 30px;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background-color: white;
+
+    border-right:
+        3px solid var(--border);
+
+}
+
+.projects-contact .recent-work h2 {
+
+    margin-bottom: 20px;
+
 }
 
 
 /* =========================================================
-   GALLERY HOVER CARDS
+   PROJECT CAROUSEL
    ========================================================= */
 
-.gallery-card {
+.projects-contact .project-carousel {
+
     position: relative;
 
-    flex: 1;
+    width: 100%;
 
-    display: block;
+    max-width: 280px;
+
+    aspect-ratio:
+        1 / 1;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   CAROUSEL TRACK
+   ========================================================= */
+
+.carousel-track {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
 
     overflow: hidden;
 
-    border: 3px solid #241a01;
+}
 
-    background-color: #004225;
 
-    text-decoration: none;
+/* =========================================================
+   CAROUSEL SLIDES
+   ========================================================= */
+
+.carousel-slide {
+
+    display: block;
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    opacity: 0;
+
+    transition:
+        opacity 1.2s ease-in-out;
+
+    pointer-events: none;
+
+}
+
+.carousel-slide.active {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+}
+
+
+/* =========================================================
+   CAROUSEL IMAGE
+   ========================================================= */
+
+.carousel-slide img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border:
+        3px solid var(--border);
+
+}
+
+
+/* =========================================================
+   CONTACT PREVIEW
+   ========================================================= */
+
+.projects-contact .contact-preview {
+
+    width: 100%;
+
+    padding:
+        50px 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: white;
+
+    text-align: center;
+
+}
+
+.projects-contact .contact-preview h2 {
+
+    max-width: 450px;
+
+    margin-bottom: 18px;
+
+    font-size: 2rem;
+
+}
+
+.projects-contact .contact-preview p {
+
+    max-width: 400px;
+
+    margin:
+        0 auto;
+
+    font-size: 1rem;
+
+}
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.watch-gallery {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding:
+        0 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+
+}
+
+
+/* =========================================================
+   GALLERY CARD
+   ========================================================= */
+
+.gallery-card {
+
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio:
+        1 / 1;
+
+    overflow: hidden;
+
+    background-color: var(--green);
+
+    border:
+        3px solid var(--border);
 
     color: white;
 
@@ -284,396 +652,130 @@ main {
     transition:
         border-color 0.3s ease,
         box-shadow 0.3s ease;
+
 }
 
 .gallery-card:hover {
-    border-color: #c9a227;
-    box-shadow: 0 4px 12px rgba(0, 66, 37, 0.12);
-}
 
-.gallery-card img {
-    width: 100%;
-    height: 350px;
+    border-color: var(--gold);
 
-    object-fit: cover;
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
 
-    display: block;
-
-    transition: transform 0.4s ease;
 }
 
 
 /* =========================================================
-   GALLERY HOVER OVERLAY
+   GALLERY IMAGE
+   ========================================================= */
+
+.gallery-card img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+
+}
+
+.gallery-card:hover img {
+
+    transform: scale(1.04);
+
+}
+
+
+/* =========================================================
+   GALLERY OVERLAY
    ========================================================= */
 
 .gallery-overlay {
+
     position: absolute;
 
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    padding: 30px;
+    inset: 0;
 
     display: flex;
+
     flex-direction: column;
-    justify-content: center;
+
+    justify-content: flex-end;
+
     align-items: center;
+
+    padding: 25px;
 
     text-align: center;
-
-    background-color: rgba(0, 45, 26, 0.88);
-
-    opacity: 0;
-
-    transition: opacity 0.35s ease;
-}
-
-
-/* Show overlay on hover */
-
-.gallery-card:hover .gallery-overlay {
-    opacity: 1;
-}
-
-
-/* Slight image zoom */
-
-.gallery-card:hover img {
-    transform: scale(1.05);
-}
-
-
-/* Gallery title */
-
-.gallery-overlay h3 {
-    margin: 0 0 15px;
-
-    font-family: Garamond, "Times New Roman", serif;
-
-    font-size: 30px;
-
-    color: white;
-}
-
-
-/* Gallery description */
-
-.gallery-overlay p {
-    max-width: 350px;
-
-    margin: 0 0 20px;
-
-    font-size: 16px;
-
-    color: white;
-}
-
-
-/* Gallery view text */
-
-.gallery-overlay span {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 15px;
-    font-weight: bold;
-
-    color: #c9a227;
-}
-
-
-/* =========================================================
-   GALLERY LIGHTBOX
-   ========================================================= */
-
-.lightbox {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 40px;
-
-    background-color: rgba(0, 0, 0, 0.92);
-
-    z-index: 1000;
-
-    cursor: pointer;
-
-    overflow-y: auto;
-}
-
-
-/* Show lightbox */
-
-.lightbox.active {
-    display: flex;
-}
-
-
-/* =========================================================
-   LIGHTBOX CONTENT
-   ========================================================= */
-
-.lightbox-content {
-    width: 100%;
-    max-width: 800px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    cursor: default;
-}
-
-
-/* =========================================================
-   LIGHTBOX MAIN IMAGE
-   ========================================================= */
-
-#lightbox-image {
-    display: block;
-
-    width: auto;
-
-    max-width: 100%;
-
-    height: auto;
-
-    max-height: 70vh;
-
-    object-fit: contain;
-
-    margin: 0 auto;
-
-    border: 3px solid #241a01;
-}
-
-
-/* =========================================================
-   LIGHTBOX TEXT
-   ========================================================= */
-
-.lightbox-text {
-    width: 100%;
-    max-width: 800px;
-
-    margin-top: 30px;
-
-    padding: 0 20px 30px;
-
-    text-align: center;
-
-    color: white;
-}
-
-
-/* =========================================================
-   LIGHTBOX DESCRIPTION CONTAINER
-   ========================================================= */
-
-#lightbox-description {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-}
-
-
-/* =========================================================
-   LIGHTBOX STORY IMAGE
-   ========================================================= */
-
-.lightbox-story-image {
-    display: block;
-
-    width: 80%;
-
-    max-width: 100%;
-
-    height: auto;
-
-    margin: 30px auto;
-
-    align-self: center;
-
-    border: 2px solid #241a01;
-}
-
-
-/* =========================================================
-   LIGHTBOX TITLE
-   ========================================================= */
-
-.lightbox-text h2 {
-    margin: 0 0 20px;
-
-    font-family: Garamond, "Times New Roman", serif;
-
-    font-size: 34px;
-
-    color: #c9a227;
-}
-
-
-/* =========================================================
-   LIGHTBOX PARAGRAPHS
-   ========================================================= */
-
-.lightbox-text p {
-    width: 100%;
-
-    max-width: 750px;
-
-    margin: 0 auto 18px;
-
-    font-family: "Times New Roman", Times, serif;
-
-    font-size: 17px;
-
-    line-height: 1.7;
-
-    color: white;
-}
-
-
-/* =========================================================
-   LIGHTBOX CLOSE BUTTON
-   ========================================================= */
-
-.lightbox-close {
-    position: fixed;
-
-    top: 15px;
-    right: 25px;
-
-    padding: 0;
 
     background: transparent;
 
-    border: none;
-
-    color: white;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 48px;
-    font-weight: normal;
-
-    line-height: 1;
-
-    cursor: pointer;
-
-    z-index: 1001;
-
-    transition: color 0.3s ease;
-}
-
-.lightbox-close:hover {
-    color: #c9a227;
 }
 
 
 /* =========================================================
-   PREVENT PAGE SCROLLING WHILE LIGHTBOX IS OPEN
+   GALLERY TEXT BACKGROUND
    ========================================================= */
 
-body.lightbox-open {
-    overflow: hidden;
-}
+.gallery-text {
 
+    background:
+        rgba(0, 0, 0, 0.65);
 
-/* =========================================================
-   HOMEPAGE WATCH ITEMS
-   ========================================================= */
+    padding:
+        12px 18px;
 
-.watch-item {
-    flex: 1;
-
-    background-color: white;
-
-    border: 3px solid #241a01;
-
-    padding-bottom: 25px;
+    max-width: 85%;
 
     text-align: center;
-}
 
-.watch-item img {
-    width: 100%;
-    height: 300px;
-
-    object-fit: cover;
-
-    display: block;
-}
-
-.watch-item h3 {
-    margin: 20px 15px 5px;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 23px;
-
-    color: #004225;
-}
-
-.watch-item p {
-    margin: 0 15px;
-
-    color: #555;
 }
 
 
 /* =========================================================
-   ABOUT PREVIEW ON HOMEPAGE
+   GALLERY TEXT
    ========================================================= */
 
-.about-preview {
-    background-color: #004225;
+.gallery-text h3 {
+
+    margin:
+        0 0 3px;
+
+    font-size: 1.35rem;
+
     color: white;
 
-    padding: 90px 40px;
-
-    text-align: center;
 }
 
-.about-preview h2 {
+.gallery-text p {
+
+    margin:
+        0 0 6px;
+
+    font-size: 0.9rem;
+
+    line-height: 1.4;
+
     color: white;
+
 }
 
-.about-preview p {
-    max-width: 750px;
+.gallery-text span {
 
-    margin: 0 auto 20px;
+    color: var(--gold);
 
-    font-size: 18px;
-}
+    font-family:
+        Garamond,
+        Georgia,
+        serif;
 
-.about-preview .button {
-    background-color: transparent;
+    font-size: 0.9rem;
 
-    border-color: white;
-}
-
-.about-preview .button:hover {
-    background-color: #c9a227;
-
-    border-color: #c9a227;
-
-    color: #111;
 }
 
 
@@ -682,213 +784,829 @@ body.lightbox-open {
    ========================================================= */
 
 .about-page {
-    max-width: 900px;
 
-    margin: 0 auto;
+    width: 100%;
 
-    padding: 90px 40px;
+    max-width: none;
+
+    margin: 0;
+
+    padding:
+        90px 30px;
 
     text-align: center;
+
+    background-color: var(--cream);
+
 }
 
-.about-page h2,
-.about-philosophy h2,
-.about-work h2,
-.about-contact h2 {
-    margin-top: 0;
+.about-page h2 {
 
     margin-bottom: 30px;
 
-    font-family: Garamond, "Times New Roman", serif;
-
-    font-size: 38px;
-
-    font-weight: bold;
-
-    color: #004225;
 }
 
 .about-page p {
-    max-width: 750px;
 
-    margin: 0 auto 25px;
+    max-width: 800px;
 
-    font-size: 18px;
+    margin:
+        0 auto 20px;
+
 }
 
 
 /* =========================================================
-   ABOUT PAGE - WHAT I DO
+   ABOUT PHILOSOPHY
    ========================================================= */
 
 .about-philosophy {
-    background-color: white;
 
-    padding: 90px 40px;
+    width: 100%;
+
+    max-width: none;
+
+    margin: 0;
+
+    padding:
+        70px 30px;
 
     text-align: center;
+
+    background-color: white;
+
+    border-top:
+        2px solid var(--border);
+
+    border-bottom:
+        2px solid var(--border);
+
+}
+
+.about-philosophy h2 {
+
+    margin-bottom: 25px;
+
 }
 
 .about-philosophy p {
+
     max-width: 750px;
 
-    margin: 0 auto 25px;
+    margin:
+        0 auto 30px;
 
-    font-size: 18px;
 }
 
 
 /* =========================================================
-   ABOUT PAGE - SHARED LIST STYLE
+   ABOUT PAGE LISTS
    ========================================================= */
 
 .about-philosophy ul,
 .about-work ul {
-    width: 600px;
-
-    max-width: 100%;
-
-    margin: 30px auto;
-
-    padding: 0;
 
     list-style: none;
 
-    text-align: center;
+    padding: 0;
+
+    margin:
+        30px auto 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
 }
 
 .about-philosophy li,
 .about-work li {
-    padding: 15px 20px;
 
-    border-bottom: 1px solid #d6d0c0;
+    display: flex;
 
-    font-size: 18px;
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
 
     text-align: center;
-}
 
-.about-philosophy li:first-child,
-.about-work li:first-child {
-    border-top: 1px solid #d6d0c0;
+    line-height: 1.5;
+
 }
 
 
 /* =========================================================
-   ABOUT PAGE - WHAT I WORK ON
+   SMALL LINE INSTEAD OF BULLET
+   ========================================================= */
+
+.about-philosophy li::before,
+.about-work li::before {
+
+    content: "";
+
+    display: block;
+
+    width: 18px;
+
+    height: 2px;
+
+    flex-shrink: 0;
+
+    background-color: var(--gold);
+
+}
+
+
+/* =========================================================
+   WHAT I WORK ON
    ========================================================= */
 
 .about-work {
+
+    width: 100%;
+
+    max-width: none;
+
+    margin: 0;
+
+    padding:
+        70px 30px;
+
+    text-align: center;
+
+    background-color: var(--cream);
+
+    border-bottom:
+        2px solid var(--border);
+
+}
+
+.about-work h2 {
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================================================
+   ABOUT CONTACT
+   ========================================================= */
+
+.about-contact {
+
+    width: 100%;
+
+    max-width: none;
+
+    margin: 0;
+
+    padding:
+        80px 30px;
+
+    text-align: center;
+
+    background-color: white;
+
+    border-bottom:
+        2px solid var(--border);
+
+}
+
+.about-contact h2 {
+
+    margin-bottom: 20px;
+
+}
+
+.about-contact p {
+
+    max-width: 700px;
+
+    margin:
+        0 auto 30px;
+
+}
+
+
+/* =========================================================
+   CONTACT PAGE
+   ========================================================= */
+
+.contact-page {
+
+    width: 100%;
+
     max-width: 900px;
 
     margin: 0 auto;
 
-    padding: 90px 40px;
+    padding:
+        90px 30px;
 
     text-align: center;
+
 }
 
+.contact-page h2 {
 
-/* =========================================================
-   ABOUT PAGE - CONTACT
-   ========================================================= */
+    margin-bottom: 30px;
 
-.about-contact {
-    background-color: white;
-
-    color: #222;
-
-    padding: 90px 40px;
-
-    text-align: center;
 }
 
-.about-contact h2 {
-    color: #004225;
-}
+.contact-page p {
 
-.about-contact p {
     max-width: 700px;
 
-    margin: 0 auto 25px;
+    margin:
+        0 auto 25px;
 
-    font-size: 18px;
-}
-
-.about-contact .button {
-    background-color: #004225;
-
-    border-color: #004225;
-
-    color: white;
-}
-
-.about-contact .button:hover {
-    background-color: #c9a227;
-
-    border-color: #c9a227;
-
-    color: #111;
 }
 
 
 /* =========================================================
-   CONTACT SECTION ON HOMEPAGE
-   ========================================================= */
-
-.contact-preview {
-    padding: 90px 40px;
-
-    text-align: center;
-
-    background-color: rgb(253, 252, 251);
-}
-
-.contact-preview h2 {
-    margin-bottom: 20px;
-}
-
-.contact-preview p {
-    font-size: 18px;
-
-    margin-bottom: 25px;
-}
-
-
-/* =========================================================
-   CONTACT PAGE - INSTAGRAM
+   CONTACT PAGE INSTAGRAM
    ========================================================= */
 
 .instagram-contact {
+
     display: inline-flex;
 
     align-items: center;
 
+    justify-content: center;
+
     gap: 10px;
 
-    color: #004225;
+    color: var(--green);
 
     text-decoration: none;
 
-    font-size: 20px;
+    line-height: 1.2;
 
-    transition: color 0.3s ease;
 }
 
 .instagram-contact:hover {
-    color: #c9a227;
+
+    color: var(--gold);
+
 }
 
 .instagram-contact-icon {
-    width: 24px;
-    height: 24px;
+
+    display: block !important;
+
+    width: 24px !important;
+
+    height: 24px !important;
+
+    min-width: 24px !important;
+
+    min-height: 24px !important;
+
+    max-width: 24px !important;
+
+    max-height: 24px !important;
+
+    flex:
+        0 0 24px !important;
+
+    flex-grow: 0 !important;
+
+    flex-shrink: 0 !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+
+    overflow: visible;
+
+}
+
+.instagram-contact strong {
+
+    display: inline-block;
+
+    margin: 0;
+
+    padding: 0;
+
+    font-size: 1.1rem;
+
+    line-height: 1.2;
+
 }
 
 
-/* Space between Instagram handle and button */
+/* =========================================================
+   INSTAGRAM
+   General Instagram styling
+   ========================================================= */
 
-.instagram-button {
-    margin-bottom: 0px;
+.instagram-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+    color: var(--green);
+
+    font-size: 1.1rem;
+
+}
+
+.instagram-link:hover {
+
+    color: var(--gold);
+
+}
+
+.instagram-icon {
+
+    display: block;
+
+    width: 22px;
+
+    height: 22px;
+
+    min-width: 22px;
+
+    min-height: 22px;
+
+    max-width: 22px;
+
+    max-height: 22px;
+
+    flex:
+        0 0 22px;
+
+}
+
+
+/* =========================================================
+   PROJECT PAGES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   BACK TO GALLERY - TOP
+   --------------------------------------------------------- */
+
+.project-back-top {
+
+    width: 100%;
+
+    margin: 0;
+
+    padding:
+        35px 30px 20px;
+
+    text-align: center;
+
+    background-color: var(--cream);
+
+}
+
+
+/* ---------------------------------------------------------
+   PROJECT HERO
+   --------------------------------------------------------- */
+
+.project-hero {
+
+    width: 100%;
+
+    margin: 0;
+
+    padding:
+        40px 30px 80px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    background-color: var(--cream);
+
+    border-bottom:
+        2px solid var(--border);
+
+}
+
+.project-hero-image {
+
+    width: 100%;
+
+}
+
+.project-hero-image img {
+
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio:
+        1 / 1;
+
+    object-fit: cover;
+
+    border:
+        3px solid var(--border);
+
+}
+
+.project-hero-text {
+
+    max-width: 600px;
+
+}
+
+.project-hero-text h2 {
+
+    font-size: 3rem;
+
+    margin-bottom: 10px;
+
+}
+
+.project-calibre {
+
+    color: var(--green);
+
+    font-weight: bold;
+
+    font-size: 1.1rem;
+
+}
+
+
+/* ---------------------------------------------------------
+   PROJECT INTRODUCTION
+   --------------------------------------------------------- */
+
+.project-introduction {
+
+    width: 100%;
+
+    margin: 0;
+
+    padding:
+        70px 30px;
+
+    text-align: center;
+
+    background-color: white;
+
+    border-bottom:
+        2px solid var(--border);
+
+}
+
+.project-introduction h2 {
+
+    margin-bottom: 30px;
+
+}
+
+.project-introduction p {
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+}
+
+
+/* ---------------------------------------------------------
+   PROJECT SECTION
+   --------------------------------------------------------- */
+
+.project-section {
+
+    width: 100%;
+
+    margin: 0;
+
+    padding:
+        80px 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    background-color: var(--cream);
+
+    border-bottom:
+        2px solid var(--border);
+
+}
+
+.project-section-reverse {
+
+    direction: rtl;
+
+    background-color: var(--cream);
+
+}
+
+.project-section-reverse > * {
+
+    direction: ltr;
+
+}
+
+.project-section-image {
+
+    width: 100%;
+
+}
+
+.project-section-image img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border:
+        3px solid var(--border);
+
+}
+
+.project-section-text {
+
+    max-width: 600px;
+
+}
+
+.project-section-text h2 {
+
+    margin-bottom: 25px;
+
+}
+
+
+/* ---------------------------------------------------------
+   PROJECT FINAL
+   --------------------------------------------------------- */
+
+.project-final {
+
+    width: 100%;
+
+    margin: 0;
+
+    padding:
+        90px 30px;
+
+    text-align: center;
+
+    background-color: white;
+
+    border-bottom:
+        2px solid var(--border);
+
+}
+
+.project-final h2 {
+
+    margin-bottom: 40px;
+
+}
+
+
+/* ---------------------------------------------------------
+   FINISHED WATCH IMAGE
+   --------------------------------------------------------- */
+
+.project-final img {
+
+    display: block;
+
+    width: 50%;
+
+    max-width: 600px;
+
+    height: auto;
+
+    margin:
+        0 auto 40px;
+
+    border:
+        3px solid var(--border);
+
+}
+
+.project-final p {
+
+    max-width: 800px;
+
+    margin:
+        0 auto;
+
+}
+
+
+/* ---------------------------------------------------------
+   BACK TO GALLERY - BOTTOM
+   --------------------------------------------------------- */
+
+.project-back {
+
+    width: 100%;
+
+    margin: 0;
+
+    padding:
+        50px 30px 90px;
+
+    text-align: center;
+
+    background-color: var(--cream);
+
+}
+
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+.lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px;
+
+    background:
+        rgba(0, 0, 0, 0.88);
+
+}
+
+.lightbox.active {
+
+    display: flex;
+
+}
+
+
+/* =========================================================
+   LIGHTBOX CONTENT
+   ========================================================= */
+
+.lightbox-content {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.1fr)
+        minmax(300px, 0.9fr);
+
+    gap: 40px;
+
+    padding: 40px;
+
+    background-color: var(--cream);
+
+    border:
+        3px solid var(--border);
+
+}
+
+.lightbox-content > img {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 75vh;
+
+    object-fit: contain;
+
+    border:
+        3px solid var(--border);
+
+}
+
+.lightbox-text {
+
+    text-align: left;
+
+}
+
+.lightbox-text h2 {
+
+    color: var(--green);
+
+    margin-bottom: 25px;
+
+}
+
+.lightbox-text p {
+
+    margin-bottom: 20px;
+
+}
+
+.lightbox-story-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    margin:
+        25px 0;
+
+    object-fit: contain;
+
+    border:
+        3px solid var(--border);
+
+}
+
+
+/* =========================================================
+   LIGHTBOX CLOSE BUTTON
+   ========================================================= */
+
+.lightbox-close {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 25px;
+
+    z-index: 10000;
+
+    width: 45px;
+
+    height: 45px;
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: white;
+
+    font-size: 3rem;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+}
+
+.lightbox-close:hover {
+
+    color: var(--gold);
+
 }
 
 
@@ -896,370 +1614,947 @@ body.lightbox-open {
    FOOTER
    ========================================================= */
 
-footer {
-    background-color: #004225;
+#footer {
 
-    color: white;
+    display: block;
 
-    padding: 25px 20px 18px;
+    width: 100%;
 
-    text-align: center;
+    margin: 0;
+
+    padding: 0;
+
+    background-color: var(--dark-green);
+
 }
 
-footer h2 {
-    margin: 0 0 8px;
+#footer .site-footer {
 
-    font-family: Garamond, "Times New Roman", serif;
+    display: block;
 
-    font-size: 24px;
+    width: 100%;
+
+    margin: 0;
+
+    padding:
+        55px 30px;
+
+    background-color:
+        var(--dark-green) !important;
+
+    color:
+        white !important;
+
+    text-align:
+        center !important;
+
 }
 
-footer h2 a {
-    color: white;
+#footer .footer-container {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 0;
+
+    text-align:
+        center !important;
+
+}
+
+#footer .site-footer h2 {
+
+    display: block;
+
+    width: 100%;
+
+    margin:
+        0 0 20px;
+
+    padding: 0;
+
+    font-family:
+        Garamond,
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 2.2rem;
+
+    font-weight: normal;
+
+    line-height: 1.3;
+
+    text-align:
+        center !important;
+
+}
+
+#footer .site-footer h2 a {
+
+    display: inline;
+
+    margin: 0;
+
+    padding: 0;
+
+    color:
+        white !important;
 
     text-decoration: none;
 
-    transition: color 0.3s ease;
 }
 
-footer h2 a:hover {
-    color: #c9a227;
+#footer .site-footer h2 a:hover {
+
+    color:
+        var(--gold) !important;
+
 }
 
-footer p {
-    margin: 4px 0;
+#footer .site-footer a.instagram-link {
 
-    color: white;
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    width: fit-content !important;
+
+    max-width: 100%;
+
+    height: auto !important;
+
+    margin:
+        20px auto 0 !important;
+
+    padding: 0 !important;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    color:
+        white !important;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 1.1rem;
+
+    font-weight: normal;
+
+    line-height: 1.2;
+
+    text-align:
+        center !important;
+
+    text-decoration: none;
+
+    gap: 10px;
+
+}
+
+#footer .site-footer a.instagram-link:hover {
+
+    color:
+        var(--gold) !important;
+
+}
+
+#footer .site-footer svg.instagram-icon {
+
+    display: block !important;
+
+    width: 22px !important;
+
+    height: 22px !important;
+
+    min-width: 22px !important;
+
+    min-height: 22px !important;
+
+    max-width: 22px !important;
+
+    max-height: 22px !important;
+
+    flex:
+        0 0 22px !important;
+
+    flex-grow: 0 !important;
+
+    flex-shrink: 0 !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+
+    overflow: visible;
+
+}
+
+#footer .site-footer .instagram-link span {
+
+    display: inline-block;
+
+    width: auto;
+
+    margin: 0;
+
+    padding: 0;
+
+    color: inherit;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: inherit;
+
+    line-height: 1.2;
+
+    text-align:
+        center;
+
+}
+
+#footer .site-footer p.copyright {
+
+    display: block;
+
+    width: 100%;
+
+    margin:
+        30px 0 0;
+
+    padding: 0;
+
+    color:
+        white !important;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 0.9rem;
+
+    line-height: 1.6;
+
+    text-align:
+        center !important;
+
+    opacity: 0.8;
+
 }
 
 
 /* =========================================================
-   FOOTER - INSTAGRAM
+   TABLET
    ========================================================= */
 
-.instagram-link {
-    display: inline-flex;
+@media (max-width: 1100px) {
 
-    align-items: center;
+    .watch-gallery {
 
-    gap: 8px;
+        grid-template-columns:
+            repeat(2, 1fr);
 
-    margin-top: 12px;
+        gap: 30px;
 
-    color: white;
+        max-width: 900px;
 
-    text-decoration: none;
+        padding:
+            0 25px;
 
-    font-size: 15px;
+    }
 
-    transition: color 0.3s ease;
-}
+    .project-hero {
 
-.instagram-icon {
-    width: 20px;
-    height: 20px;
-}
+        gap: 40px;
 
-.instagram-link:hover {
-    color: #c9a227;
-}
+    }
 
-footer .copyright {
-    margin-top: 12px;
+    .project-hero-text h2 {
 
-    font-size: 13px;
+        font-size: 2.5rem;
 
-    color: #e5e5e5;
+    }
+
+    .project-section {
+
+        gap: 40px;
+
+    }
+
+    .projects-contact .recent-work {
+
+        padding:
+            45px 30px;
+
+    }
+
+    .projects-contact .contact-preview {
+
+        padding:
+            45px 30px;
+
+    }
+
+    .projects-contact .project-carousel {
+
+        max-width: 250px;
+
+    }
+
+    .projects-contact .contact-preview h2 {
+
+        font-size: 1.8rem;
+
+    }
+
 }
 
 
 /* =========================================================
-   MOBILE / RESPONSIVE DESIGN
+   MOBILE
    ========================================================= */
 
-@media (max-width: 800px) {
-
-
-    /* =====================================================
-       HEADER
-       ===================================================== */
+@media (max-width: 700px) {
 
     header {
-        padding: 35px 20px;
+
+        padding:
+            25px 15px;
+
     }
 
     header h1 {
-        font-size: 36px;
+
+        font-size: 2.2rem;
+
     }
 
 
-    /* =====================================================
-       NAVIGATION
-       ===================================================== */
+    /* Navigation */
 
     .navbar {
-        padding: 20px 10px;
+
+        gap: 20px;
+
+        padding:
+            12px 10px;
+
     }
 
     .navbar a {
-        margin: 0 8px;
 
-        font-size: 17px;
+        font-size: 0.95rem;
+
     }
 
 
-    /* =====================================================
-       HOMEPAGE HERO
-       ===================================================== */
+    /* Hero */
 
     .hero {
-        flex-direction: column;
 
-        padding: 60px 25px;
+        grid-template-columns: 1fr;
 
-        gap: 40px;
+        gap: 35px;
+
+        padding:
+            50px 20px;
+
+    }
+
+    .hero-image {
+
+        width: 100%;
+
+    }
+
+    .hero-image img {
+
+        width: 100%;
+
+        height: auto;
+
+    }
+
+    .hero-text {
+
+        max-width: none;
+
+        text-align: center;
+
     }
 
     .hero-text h2 {
-        font-size: 34px;
+
+        font-size: 2.5rem;
+
+    }
+
+    .hero-text p {
+
+        font-size: 1.1rem;
+
     }
 
 
-    /* =====================================================
-       SERVICES
-       ===================================================== */
+    /* Services */
+
+    .services {
+
+        padding:
+            60px 20px;
+
+    }
 
     .service-container {
-        flex-direction: column;
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
     }
 
     .service img {
-        height: 300px;
+
+        height: 250px;
+
     }
 
 
-    /* =====================================================
-       GALLERY
-       ===================================================== */
+    /* Recent projects */
+
+    .projects-contact {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .projects-contact .recent-work {
+
+        padding:
+            45px 20px;
+
+        border-right: none;
+
+    }
+
+    .projects-contact .contact-preview {
+
+        padding:
+            45px 25px;
+
+        border-top:
+            3px solid var(--border);
+
+    }
+
+    .projects-contact .recent-work h2 {
+
+        margin-bottom: 25px;
+
+    }
+
+    .projects-contact .project-carousel {
+
+        width: 100%;
+
+        max-width: 280px;
+
+    }
+
+
+    /* Gallery */
 
     .watch-gallery {
-        flex-direction: column;
+
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+
+        gap: 25px;
+
+        padding:
+            0 20px;
+
     }
 
     .gallery-card {
-        width: 100%;
+
+        aspect-ratio:
+            1 / 1;
+
     }
 
     .gallery-card img {
-        height: 300px;
+
+        width: 100%;
+
+        height: 100%;
+
     }
-
-
-    /* On touch devices there is no true hover.
-       Keep the cards clean and let the image itself
-       open the lightbox. */
 
     .gallery-overlay {
-        display: none;
+
+        padding:
+            25px;
+
+    }
+
+    .gallery-text {
+
+        padding:
+            12px 16px;
+
+        max-width: 90%;
+
+    }
+
+    .gallery-text h3 {
+
+        font-size: 1.3rem;
+
+    }
+
+    .gallery-text p {
+
+        font-size: 0.85rem;
+
+    }
+
+    .gallery-text span {
+
+        font-size: 0.85rem;
+
     }
 
 
-    /* =====================================================
-       HOMEPAGE RECENT WORK
-       ===================================================== */
+    /* About */
 
-    .watch-item img {
-        height: auto;
-    }
+    .about-page {
 
+        padding:
+            60px 20px;
 
-    /* =====================================================
-       LIGHTBOX
-       ===================================================== */
-
-    .lightbox {
-        padding: 20px;
-
-        align-items: flex-start;
-
-        justify-content: center;
-    }
-
-    .lightbox-content {
-        width: 100%;
-
-        max-width: 100%;
-
-        margin-top: 45px;
-
-        align-items: center;
-    }
-
-
-    /* =====================================================
-       MOBILE MAIN LIGHTBOX IMAGE
-       ===================================================== */
-
-    #lightbox-image {
-        width: auto;
-
-        max-width: 100%;
-
-        max-height: 60vh;
-
-        margin-left: auto;
-        margin-right: auto;
-
-        border-width: 2px;
-    }
-
-
-    /* =====================================================
-       MOBILE LIGHTBOX TEXT
-       ===================================================== */
-
-    .lightbox-text {
-        width: 100%;
-
-        max-width: 100%;
-
-        margin-top: 20px;
-
-        padding: 0 10px 30px;
-
-        text-align: center;
-    }
-
-
-    /* =====================================================
-       MOBILE LIGHTBOX DESCRIPTION
-       ===================================================== */
-
-    #lightbox-description {
-        width: 100%;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: center;
-    }
-
-
-    /* =====================================================
-       MOBILE STORY IMAGE
-       ===================================================== */
-
-    .lightbox-story-image {
-        display: block;
-
-        width: 80%;
-
-        max-width: 100%;
-
-        height: auto;
-
-        margin: 25px auto;
-
-        align-self: center;
-
-        border-width: 2px;
-    }
-
-
-    /* =====================================================
-       MOBILE STORY PARAGRAPHS
-       ===================================================== */
-
-    .lightbox-text p {
-        width: 100%;
-
-        max-width: 750px;
-
-        margin-left: auto;
-
-        margin-right: auto;
-
-        font-size: 16px;
-    }
-
-
-    /* =====================================================
-       MOBILE LIGHTBOX CLOSE BUTTON
-       ===================================================== */
-
-    .lightbox-close {
-        top: 15px;
-
-        right: 18px;
-
-        font-size: 42px;
-    }
-
-
-    /* =====================================================
-       ABOUT PAGE
-       ===================================================== */
-
-    .about-page,
-    .about-work {
-        padding: 60px 25px;
-
-        padding-bottom: 5px;
     }
 
     .about-philosophy,
-    .about-contact {
-        padding: 70px 25px;
+    .about-work {
+
+        padding:
+            50px 20px;
+
     }
-
-    .about-page h2,
-    .about-philosophy h2,
-    .about-work h2,
-    .about-contact h2 {
-        font-size: 32px;
-    }
-
-
-    /* =====================================================
-       ABOUT LISTS
-       ===================================================== */
 
     .about-philosophy ul,
     .about-work ul {
+
+        gap: 10px;
+
+    }
+
+    .about-philosophy li,
+    .about-work li {
+
+        gap: 10px;
+
+    }
+
+    .about-philosophy li::before,
+    .about-work li::before {
+
+        width: 14px;
+
+    }
+
+    .about-contact {
+
+        padding:
+            60px 20px;
+
+    }
+
+
+    /* Contact */
+
+    .contact-page {
+
+        padding:
+            60px 20px;
+
+    }
+
+
+    /* Project pages */
+
+    .project-back-top {
+
+        padding:
+            25px 20px 10px;
+
+    }
+
+    .project-hero {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding:
+            30px 20px 60px;
+
+    }
+
+    .project-hero-text {
+
+        max-width: none;
+
+        text-align: center;
+
+    }
+
+    .project-hero-text h2 {
+
+        font-size: 2.2rem;
+
+    }
+
+    .project-introduction {
+
+        padding:
+            60px 20px;
+
+    }
+
+    .project-section {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding:
+            60px 20px;
+
+    }
+
+    .project-section-reverse {
+
+        direction: ltr;
+
+    }
+
+    .project-section-text {
+
+        max-width: none;
+
+        text-align: center;
+
+    }
+
+    .project-final {
+
+        padding:
+            60px 20px;
+
+    }
+
+    .project-final img {
+
         width: 100%;
 
-        max-width: 600px;
+        max-width: 550px;
+
+        margin:
+            0 auto 30px;
+
+    }
+
+    .project-back {
+
+        padding:
+            40px 20px 60px;
+
     }
 
 
-    /* =====================================================
-       OTHER SECTIONS
-       ===================================================== */
+    /* Lightbox */
 
-    .services,
-    .recent-work,
-    .contact-preview {
-        padding: 60px 25px;
+    .lightbox {
+
+        padding:
+            15px;
+
     }
 
-    .about-preview {
-        padding: 70px 25px;
+    .lightbox-content {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        padding:
+            25px;
+
+        max-height: 90vh;
+
+    }
+
+    .lightbox-content > img {
+
+        max-height: 50vh;
+
+    }
+
+    .lightbox-close {
+
+        top: 5px;
+
+        right: 10px;
+
     }
 
 
-    /* =====================================================
-       INSTAGRAM ICON
-       ===================================================== */
+    /* Footer */
 
-    .instagram-contact-icon {
-        width: 24px;
-        height: 24px;
+    #footer .site-footer {
 
-        max-width: 24px;
-        max-height: 24px;
+        padding:
+            45px 20px;
 
-        flex: 0 0 24px;
+    }
+
+    #footer .site-footer h2 {
+
+        font-size: 2rem;
+
+    }
+
+    #footer .site-footer a.instagram-link {
+
+        margin-top:
+            18px !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .navbar {
+
+        gap: 12px;
+
+    }
+
+    .navbar a {
+
+        font-size: 0.85rem;
+
+    }
+
+    header h1 {
+
+        font-size: 1.9rem;
+
+    }
+
+    .hero {
+
+        padding:
+            40px 15px;
+
+    }
+
+    .hero-text h2 {
+
+        font-size: 2.1rem;
+
+    }
+
+    h2 {
+
+        font-size: 1.9rem;
+
+    }
+
+
+    /* Recent projects */
+
+    .projects-contact .recent-work {
+
+        padding:
+            40px 15px;
+
+    }
+
+    .projects-contact .project-carousel {
+
+        max-width: 240px;
+
+    }
+
+    .projects-contact .contact-preview {
+
+        padding:
+            40px 20px;
+
+    }
+
+
+    /* Gallery */
+
+    .watch-gallery {
+
+        padding:
+            0 15px;
+
+        gap: 20px;
+
+    }
+
+    .gallery-overlay {
+
+        padding:
+            20px;
+
+    }
+
+    .gallery-text {
+
+        padding:
+            10px 14px;
+
+        max-width: 92%;
+
+    }
+
+    .gallery-text h3 {
+
+        font-size: 1.2rem;
+
+    }
+
+    .gallery-text p {
+
+        font-size: 0.8rem;
+
+        line-height: 1.35;
+
+    }
+
+    .gallery-text span {
+
+        font-size: 0.8rem;
+
+    }
+
+
+    /* Buttons */
+
+    .button {
+
+        padding:
+            10px 20px;
+
+    }
+
+
+    /* Project pages */
+
+    .project-back-top {
+
+        padding:
+            20px 15px 10px;
+
+    }
+
+    .project-hero {
+
+        padding:
+            25px 15px 50px;
+
+    }
+
+    .project-introduction {
+
+        padding:
+            50px 15px;
+
+    }
+
+    .project-section {
+
+        padding:
+            50px 15px;
+
+    }
+
+    .project-final {
+
+        padding:
+            50px 15px;
+
+    }
+
+    .project-final img {
+
+        max-width: 100%;
+
+        margin-bottom: 30px;
+
+    }
+
+    .project-back {
+
+        padding:
+            35px 15px 50px;
+
+    }
+
+
+    /* Footer */
+
+    #footer .site-footer {
+
+        padding:
+            40px 15px;
+
+    }
+
+    #footer .site-footer h2 {
+
+        font-size: 1.9rem;
+
+    }
+
+    #footer .site-footer svg.instagram-icon {
+
+        width: 22px !important;
+
+        height: 22px !important;
+
     }
 
 }

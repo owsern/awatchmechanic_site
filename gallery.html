@@ -2,13 +2,16 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Gallery | A Watch Mechanic</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 
 <body>
 
@@ -16,7 +19,9 @@
     <!-- Header -->
 
     <header>
+
         <h1>A Watch Mechanic</h1>
+
     </header>
 
 
@@ -59,19 +64,73 @@
 
 
                 <!-- =====================================================
+                     TUDOR 7934
+                     ===================================================== -->
+
+                <a href="projects/tudor-7934.html"
+                   class="gallery-card">
+
+                    <img
+                        src="images/tudor7934/tudor.jpg"
+                        alt="Tudor 7934 restoration"
+                    >
+
+                    <div class="gallery-overlay">
+
+                        <div class="gallery-text">
+
+                            <h3>Tudor 7934</h3>
+
+                            <p>
+                                Vintage watch restoration.
+                            </p>
+
+                            <span>View Project →</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <!-- =====================================================
+                     OMEGA LADIES
+                     ===================================================== -->
+
+                <a href="projects/omega-ladies.html"
+                   class="gallery-card">
+
+                    <img
+                        src="images/omega-ladies/omega_ladies_magazine.jpg"
+                        alt="Omega Ladies restoration"
+                    >
+
+                    <div class="gallery-overlay">
+
+                        <div class="gallery-text">
+
+                            <h3>Omega Ladies</h3>
+
+                            <p>
+                                Mechanical service and restoration.
+                            </p>
+
+                            <span>View Project →</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <!-- =====================================================
                      OMEGA CALIBRE 562
                      ===================================================== -->
 
-                <a href="images/omega562.jpg"
-                   class="gallery-card"
-                   onclick="openLightbox(
-                       event,
-                       this.href,
-                       'Omega Calibre 562',
-                       'This Omega Calibre 562 was brought in for servicing and restoration. The movement was carefully inspected and assessed before being completely disassembled for cleaning and servicing.',
-                       'Each component was examined for wear and condition before the movement was reassembled and lubricated. Particular attention was given to ensuring the movement was operating reliably and maintaining good timekeeping.',
-                       'The finished watch was then regulated and tested to ensure everything was functioning as it should.'
-                   )">
+                <a href="projects/omega-562.html"
+                   class="gallery-card">
 
                     <img
                         src="images/omega562.jpg"
@@ -80,88 +139,22 @@
 
                     <div class="gallery-overlay">
 
-                        <h3>Omega Calibre 562</h3>
+                        <div class="gallery-text">
 
-                        <p>
-                            Automatic movement restoration and servicing.
-                        </p>
+                            <h3>Omega Calibre 562</h3>
 
-                        <span>View Image →</span>
+                            <p>
+                                Automatic movement restoration and servicing.
+                            </p>
 
-                    </div>
+                            <span>View Project →</span>
 
-                </a>
-
-
-                <!-- =====================================================
-                     ZENITH CALIBRE 2572
-                     ===================================================== -->
-
-                <a href="images/zenith2572.jpg"
-                   class="gallery-card"
-                   onclick="openLightbox(
-                       event,
-                       this.href,
-                       'Zenith Calibre 2572',
-                       'This Zenith Calibre 2572 was serviced as part of a mechanical restoration. The movement was carefully disassembled so that each component could be inspected and cleaned.',
-                       'After cleaning, the movement was reassembled using fresh lubrication where required. The escapement and regulating system were then checked and adjusted to ensure the movement was running correctly.',
-                       'Once the service was complete, the watch was tested and regulated to achieve reliable operation.'
-                   )">
-
-                    <img
-                        src="images/zenith2572.jpg"
-                        alt="Zenith Calibre 2572 restoration"
-                    >
-
-                    <div class="gallery-overlay">
-
-                        <h3>Zenith Calibre 2572</h3>
-
-                        <p>
-                            Mechanical service and restoration.
-                        </p>
-
-                        <span>View Image →</span>
+                        </div>
 
                     </div>
 
                 </a>
 
-
-                <!-- =====================================================
-     TUDOR 7934
-     ===================================================== -->
-
-        <a href="images/tudor.jpg"
-        class="gallery-card"
-        onclick="openLightbox(
-            event,
-            this.href,
-            'Tudor 7934',
-            'This Tudor 7934 was brought in for restoration and mechanical servicing. The watch was carefully inspected before the movement was removed and prepared for service.',
-            'The movement was disassembled, cleaned and inspected before being carefully reassembled. Attention was given to the condition of the components while preserving the character of the original timepiece.',
-            'After reassembly and regulation, the watch was tested to ensure the movement was operating reliably.',
-            'images/frontimage.jpg'
-        )">
-
-            <img
-                src="images/tudor.jpg"
-                alt="Tudor 7934 restoration"
-            >
-
-            <div class="gallery-overlay">
-
-                <h3>Tudor 7934</h3>
-
-                <p>
-                    Vintage watch restoration.
-                </p>
-
-                <span>View Image →</span>
-
-            </div>
-
-        </a>
 
             </div>
 
@@ -188,57 +181,6 @@
 
 
     </main>
-
-
-    <!-- =========================================================
-         IMAGE LIGHTBOX
-         ========================================================= -->
-
-    <div id="lightbox"
-         class="lightbox"
-         onclick="closeLightbox()">
-
-
-        <!-- Close Button -->
-
-        <button
-            class="lightbox-close"
-            type="button"
-            onclick="closeLightbox()"
-            aria-label="Close image">
-            &times;
-        </button>
-
-
-        <!-- Lightbox Content -->
-
-        <div class="lightbox-content"
-             onclick="event.stopPropagation()">
-
-
-            <!-- Enlarged Image -->
-
-            <img
-                id="lightbox-image"
-                src=""
-                alt=""
-            >
-
-
-            <!-- Image Description -->
-
-            <div class="lightbox-text">
-
-                <h2 id="lightbox-title"></h2>
-
-                <div id="lightbox-description"></div>
-
-            </div>
-
-
-        </div>
-
-    </div>
 
 
     <!-- Footer -->

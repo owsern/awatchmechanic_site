@@ -1,6 +1,6 @@
 /* =========================================================
    A WATCH MECHANIC
-   Footer + Gallery Lightbox JavaScript
+   Footer + Gallery Lightbox + Project Carousel JavaScript
    ========================================================= */
 
 
@@ -8,25 +8,60 @@
    LOAD FOOTER
    ========================================================= */
 
-fetch("footer.html")
+document.addEventListener("DOMContentLoaded", function () {
 
-    .then(response => response.text())
+    const footer = document.getElementById("footer");
 
-    .then(data => {
+    if (!footer) {
+        return;
+    }
 
-        const footer = document.getElementById("footer");
 
-        if (footer) {
+    /*
+       Project pages are inside /projects/
+       All other pages are in the website root.
+    */
+
+    const footerPath = window.location.pathname.includes("/projects/")
+        ? "../footer.html"
+        : "footer.html";
+
+
+    fetch(footerPath)
+
+        .then(response => {
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Could not load footer: " +
+                    response.status + " " +
+                    response.statusText
+                );
+
+            }
+
+            return response.text();
+
+        })
+
+        .then(data => {
+
             footer.innerHTML = data;
-        }
 
-    })
+        })
 
-    .catch(error => {
+        .catch(error => {
 
-        console.error("Error loading footer:", error);
+            console.error("Footer loading error:", error);
 
-    });
+            footer.innerHTML = `
+                <p>Unable to load footer.</p>
+            `;
+
+        });
+
+});
 
 
 /* =========================================================
@@ -43,44 +78,48 @@ function openLightbox(
     additionalImage
 ) {
 
-    /* Stop the link from opening the image as a new page */
-
     event.preventDefault();
 
+    const lightbox =
+        document.getElementById("lightbox");
 
-    /* Find the lightbox elements */
+    const lightboxImage =
+        document.getElementById("lightbox-image");
 
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImage = document.getElementById("lightbox-image");
-    const lightboxTitle = document.getElementById("lightbox-title");
-    const lightboxDescription = document.getElementById("lightbox-description");
+    const lightboxTitle =
+        document.getElementById("lightbox-title");
 
+    const lightboxDescription =
+        document.getElementById("lightbox-description");
 
-    /* Make sure the lightbox exists */
 
     if (!lightbox) {
         return;
     }
 
 
-    /* Set the main enlarged image */
-
     lightboxImage.src = image;
 
-
-    /* Set the title */
+    lightboxImage.alt = title;
 
     lightboxTitle.textContent = title;
 
 
-    /* Start building the description */
-
-    let description = `
-        <p>${paragraph1}</p>
-    `;
+    let description = "";
 
 
-    /* Add the additional image if one has been supplied */
+    /* First paragraph */
+
+    if (paragraph1) {
+
+        description += `
+            <p>${paragraph1}</p>
+        `;
+
+    }
+
+
+    /* Additional story image */
 
     if (additionalImage) {
 
@@ -88,32 +127,39 @@ function openLightbox(
             <img
                 src="${additionalImage}"
                 class="lightbox-story-image"
-                alt="${title}"
+                alt="${title} restoration detail"
             >
         `;
 
     }
 
 
-    /* Add the remaining paragraphs */
+    /* Second paragraph */
 
-    description += `
-        <p>${paragraph2}</p>
-        <p>${paragraph3}</p>
-    `;
+    if (paragraph2) {
+
+        description += `
+            <p>${paragraph2}</p>
+        `;
+
+    }
 
 
-    /* Insert the content */
+    /* Third paragraph */
+
+    if (paragraph3) {
+
+        description += `
+            <p>${paragraph3}</p>
+        `;
+
+    }
+
 
     lightboxDescription.innerHTML = description;
 
 
-    /* Show the lightbox */
-
     lightbox.classList.add("active");
-
-
-    /* Prevent the page underneath from scrolling */
 
     document.body.classList.add("lightbox-open");
 
@@ -126,34 +172,32 @@ function openLightbox(
 
 function closeLightbox() {
 
-    const lightbox = document.getElementById("lightbox");
-
-
-    /* Do nothing if there is no lightbox on the page */
+    const lightbox =
+        document.getElementById("lightbox");
 
     if (!lightbox) {
         return;
     }
 
 
-    const lightboxImage = document.getElementById("lightbox-image");
-    const lightboxTitle = document.getElementById("lightbox-title");
-    const lightboxDescription = document.getElementById("lightbox-description");
+    const lightboxImage =
+        document.getElementById("lightbox-image");
 
+    const lightboxTitle =
+        document.getElementById("lightbox-title");
 
-    /* Hide the lightbox */
+    const lightboxDescription =
+        document.getElementById("lightbox-description");
+
 
     lightbox.classList.remove("active");
-
-
-    /* Allow the page to scroll again */
 
     document.body.classList.remove("lightbox-open");
 
 
-    /* Clear the content */
-
     lightboxImage.src = "";
+
+    lightboxImage.alt = "";
 
     lightboxTitle.textContent = "";
 
@@ -166,15 +210,192 @@ function closeLightbox() {
    ESCAPE KEY
    ========================================================= */
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", function (event) {
 
-    if (
-        event.key === "Escape" &&
-        document.getElementById("lightbox")
-    ) {
+    if (event.key === "Escape") {
 
-        closeLightbox();
+        const lightbox =
+            document.getElementById("lightbox");
+
+
+        if (
+            lightbox &&
+            lightbox.classList.contains("active")
+        ) {
+
+            closeLightbox();
+
+        }
 
     }
+
+});
+
+
+/* =========================================================
+   RECENT PROJECTS CAROUSEL
+   ========================================================= */
+
+let currentProject = 0;
+
+let carouselTimer;
+
+
+/* =========================================================
+   SHOW PROJECT
+   ========================================================= */
+
+function showProject(index) {
+
+    const slides =
+        document.querySelectorAll(".carousel-slide");
+
+    const dots =
+        document.querySelectorAll(".carousel-dot");
+
+
+    /*
+       If the page doesn't contain a carousel,
+       simply stop here.
+    */
+
+    if (!slides.length) {
+        return;
+    }
+
+
+    /* Loop back to first project */
+
+    if (index >= slides.length) {
+
+        currentProject = 0;
+
+    }
+
+
+    /* Loop back to last project */
+
+    else if (index < 0) {
+
+        currentProject = slides.length - 1;
+
+    }
+
+
+    /* Show requested project */
+
+    else {
+
+        currentProject = index;
+
+    }
+
+
+    /* Remove active state from all slides */
+
+    slides.forEach(function (slide) {
+
+        slide.classList.remove("active");
+
+    });
+
+
+    /* Remove active state from all dots */
+
+    dots.forEach(function (dot) {
+
+        dot.classList.remove("active");
+
+    });
+
+
+    /* Activate current slide */
+
+    slides[currentProject].classList.add("active");
+
+
+    /* Activate current dot */
+
+    if (dots[currentProject]) {
+
+        dots[currentProject].classList.add("active");
+
+    }
+
+}
+
+
+/* =========================================================
+   CHANGE PROJECT
+   ========================================================= */
+
+function changeProject(direction) {
+
+    showProject(
+        currentProject + direction
+    );
+
+
+    /*
+       Reset the automatic carousel timer
+       whenever the user manually changes slides.
+    */
+
+    startCarousel();
+
+}
+
+
+/* =========================================================
+   AUTOMATIC CAROUSEL
+   ========================================================= */
+
+function startCarousel() {
+
+    /*
+       Clear any existing timer first.
+       This prevents multiple timers running
+       at the same time.
+    */
+
+    clearInterval(carouselTimer);
+
+
+    /*
+       Change to the next project every 5 seconds.
+    */
+
+    carouselTimer = setInterval(function () {
+
+        showProject(
+            currentProject + 1
+        );
+
+    }, 5000);
+
+}
+
+
+/* =========================================================
+   START AUTOMATIC CAROUSEL
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const carousel =
+        document.querySelector(".project-carousel");
+
+
+    /*
+       Only start the automatic carousel if
+       this page contains a project carousel.
+    */
+
+    if (!carousel) {
+        return;
+    }
+
+
+    startCarousel();
 
 });
