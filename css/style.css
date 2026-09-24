@@ -417,11 +417,11 @@ main {
 
 
 /* =========================================================
-   RECENT PROJECTS + CONTACT
+   RECENT gallery + CONTACT
    FULL WIDTH
    ========================================================= */
 
-.projects-contact {
+.gallery-contact {
 
     width: 100%;
 
@@ -446,7 +446,7 @@ main {
    RECENT WORK
    ========================================================= */
 
-.projects-contact .recent-work {
+.gallery-contact .recent-work {
 
     width: 100%;
 
@@ -470,7 +470,7 @@ main {
 
 }
 
-.projects-contact .recent-work h2 {
+.gallery-contact .recent-work h2 {
 
     margin-bottom: 20px;
 
@@ -481,7 +481,7 @@ main {
    PROJECT CAROUSEL
    ========================================================= */
 
-.projects-contact .project-carousel {
+.gallery-contact .project-carousel {
 
     position: relative;
 
@@ -574,7 +574,7 @@ main {
    CONTACT PREVIEW
    ========================================================= */
 
-.projects-contact .contact-preview {
+.gallery-contact .contact-preview {
 
     width: 100%;
 
@@ -595,7 +595,7 @@ main {
 
 }
 
-.projects-contact .contact-preview h2 {
+.gallery-contact .contact-preview h2 {
 
     max-width: 450px;
 
@@ -605,7 +605,7 @@ main {
 
 }
 
-.projects-contact .contact-preview p {
+.gallery-contact .contact-preview p {
 
     max-width: 400px;
 
@@ -618,7 +618,7 @@ main {
 
 
 /* =========================================================
-   GALLERY
+   gallery
    ========================================================= */
 
 .watch-gallery {
@@ -1175,11 +1175,6 @@ main {
 }
 
 
-/* =========================================================
-   PROJECT PAGES
-   ========================================================= */
-
-
 /* ---------------------------------------------------------
    BACK TO GALLERY - TOP
    --------------------------------------------------------- */
@@ -1403,7 +1398,14 @@ main {
     padding:
         90px 30px;
 
-    text-align: center;
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
 
     background-color: white;
 
@@ -1412,9 +1414,19 @@ main {
 
 }
 
+
+/* ---------------------------------------------------------
+   FINISHED WATCH HEADING
+   --------------------------------------------------------- */
+
 .project-final h2 {
 
-    margin-bottom: 40px;
+    grid-column:
+        1 / -1;
+
+    margin: 0 0 10px;
+
+    text-align: center;
 
 }
 
@@ -1427,26 +1439,31 @@ main {
 
     display: block;
 
-    width: 50%;
+    width: 80%;
 
-    max-width: 600px;
+    max-width: 500px;
 
     height: auto;
 
-    margin:
-        0 auto 40px;
+    margin: 0 auto;
 
     border:
         3px solid var(--border);
 
 }
 
+
+/* ---------------------------------------------------------
+   FINISHED WATCH TEXT
+   --------------------------------------------------------- */
+
 .project-final p {
 
-    max-width: 800px;
+    max-width: 600px;
 
-    margin:
-        0 auto;
+    margin: 0 auto;
+
+    text-align: left;
 
 }
 
@@ -1919,27 +1936,27 @@ main {
 
     }
 
-    .projects-contact .recent-work {
+    .gallery-contact .recent-work {
 
         padding:
             45px 30px;
 
     }
 
-    .projects-contact .contact-preview {
+    .gallery-contact .contact-preview {
 
         padding:
             45px 30px;
 
     }
 
-    .projects-contact .project-carousel {
+    .gallery-contact .project-carousel {
 
         max-width: 250px;
 
     }
 
-    .projects-contact .contact-preview h2 {
+    .gallery-contact .contact-preview h2 {
 
         font-size: 1.8rem;
 
@@ -2040,15 +2057,15 @@ main {
     }
 
 
-    /* Recent projects */
+    /* Recent gallery */
 
-    .projects-contact {
+    .gallery-contact {
 
         grid-template-columns: 1fr;
 
     }
 
-    .projects-contact .recent-work {
+    .gallery-contact .recent-work {
 
         padding:
             45px 20px;
@@ -2057,7 +2074,7 @@ main {
 
     }
 
-    .projects-contact .contact-preview {
+    .gallery-contact .contact-preview {
 
         padding:
             45px 25px;
@@ -2067,13 +2084,13 @@ main {
 
     }
 
-    .projects-contact .recent-work h2 {
+    .gallery-contact .recent-work h2 {
 
         margin-bottom: 25px;
 
     }
 
-    .projects-contact .project-carousel {
+    .gallery-contact .project-carousel {
 
         width: 100%;
 
@@ -2271,8 +2288,21 @@ main {
 
     .project-final {
 
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
         padding:
             60px 20px;
+
+    }
+
+    .project-final h2 {
+
+        grid-column:
+            1;
+
+        margin-bottom: 0;
 
     }
 
@@ -2282,8 +2312,17 @@ main {
 
         max-width: 550px;
 
-        margin:
-            0 auto 30px;
+        margin: 0 auto;
+
+    }
+
+    .project-final p {
+
+        max-width: none;
+
+        margin: 0;
+
+        text-align: center;
 
     }
 
@@ -2401,22 +2440,22 @@ main {
     }
 
 
-    /* Recent projects */
+    /* Recent gallery */
 
-    .projects-contact .recent-work {
+    .gallery-contact .recent-work {
 
         padding:
             40px 15px;
 
     }
 
-    .projects-contact .project-carousel {
+    .gallery-contact .project-carousel {
 
         max-width: 240px;
 
     }
 
-    .projects-contact .contact-preview {
+    .gallery-contact .contact-preview {
 
         padding:
             40px 20px;
